@@ -24,7 +24,7 @@ const Header = ({user}) => {
                     {
                         user === false ? 
                         <Nav.Link onClick={() => {
-                            window.open(`${Util.config.api}`)
+                            window.open(`${Util.config.api}/urls/login`, 'Login', 'width=500;height=500')
                         }}>
                             <FontAwesomeIcon icon={['fas', 'lock']}/>
                             {t('common.header.login')}
