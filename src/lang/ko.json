@@ -1,5 +1,10 @@
 {
     "common": {
-        "title": "치노봇"
+        "header": {
+            "title": "치노봇",
+            "links": {
+                "commands": "명령어"
+            }
+        }
     }
 }
