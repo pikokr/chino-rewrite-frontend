@@ -8,7 +8,7 @@ const Header = () => {
 
     return (
         <>
-            <Navbar bg="primary" className="navbar-dark">
+            <Navbar bg="dark" variant="dark">
                 <Navbar.Brand as={Link} to="/">
                     {t('common.title')}
                 </Navbar.Brand>
