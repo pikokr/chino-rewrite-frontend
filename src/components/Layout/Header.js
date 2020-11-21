@@ -3,8 +3,9 @@ import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { withState } from '../../store';
 
-const Header = () => {
+const Header = ({user}) => {
     const {t} = useTranslation()
 
     return (
@@ -18,9 +19,19 @@ const Header = () => {
                         <FontAwesomeIcon icon={['fas', 'terminal']}/>
                         {t('common.header.links.commands')}</Nav.Link>
                 </Nav>
+                <Nav className="ml-auto">
+                    {
+                        user === false ? 
+                        <Nav.Link>
+                            <FontAwesomeIcon icon={['fas', 'lock']}/>
+                            {t('common.header.login')}
+                        </Nav.Link>
+                        : ''
+                    }
+                </Nav>
             </Navbar>
         </>
     );
 };
 
-export default Header;
+export default withState(Header);

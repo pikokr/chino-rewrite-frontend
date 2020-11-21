@@ -6,9 +6,13 @@ import Root from './Root'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './i18n'
 import './icon'
+import store from './store'
+import { Provider } from 'react-redux';
 
 ReactDOM.render(
-  <Root/>,
+  <Provider store={store}>
+    <Root/>
+  </Provider>,
   document.getElementById('root')
 );
 

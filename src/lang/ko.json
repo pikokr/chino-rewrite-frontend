@@ -4,7 +4,8 @@
             "title": "치노봇",
             "links": {
                 "commands": "명령어"
-            }
+            },
+            "login": "로그인"
         }
     }
 }
