@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
@@ -13,9 +14,9 @@ const Header = () => {
                     {t('common.header.title')}
                 </Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link as={Link} to="/commands">{
-                        t('common.header.links.commands')
-                    }</Nav.Link>
+                    <Nav.Link as={Link} to="/commands">
+                        <FontAwesomeIcon icon={['fas', 'terminal']}/>
+                        {t('common.header.links.commands')}</Nav.Link>
                 </Nav>
             </Navbar>
         </>
