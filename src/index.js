@@ -4,6 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Root from './Root'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './i18n'
 
 ReactDOM.render(
   <Root/>,
