@@ -4,6 +4,7 @@ import { Nav, Navbar } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { withState } from '../../store';
+import Util from '../../Util';
 
 const Header = ({user}) => {
     const {t} = useTranslation()
@@ -22,7 +23,9 @@ const Header = ({user}) => {
                 <Nav className="ml-auto">
                     {
                         user === false ? 
-                        <Nav.Link>
+                        <Nav.Link onClick={() => {
+                            window.open(`${Util.config.api}`)
+                        }}>
                             <FontAwesomeIcon icon={['fas', 'lock']}/>
                             {t('common.header.login')}
                         </Nav.Link>
