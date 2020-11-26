@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {withState} from "../../store";
-import {Container, Spinner, Table} from "react-bootstrap";
 import Socket from "../../Socket";
 import Layout from "../../components/Layout";
 
@@ -14,9 +13,9 @@ class StatusView extends Component {
 
         return (
             <Layout>
-                <Container>
+                <div className="container">
                     {clusters ? clusters.length ? (
-                            <Table striped bordered hover>
+                            <table striped bordered hover>
                                 <thead>
                                 <tr>
                                     <th>
@@ -41,10 +40,10 @@ class StatusView extends Component {
                                     ))
                                 }
                                 </tbody>
-                            </Table>
+                            </table>
                         ) : '연결되어있는 클러스터가 없어요!' :
-                        <Spinner animation="border"/>}
-                </Container>
+                        'Loading'}
+                </div>
             </Layout>
         );
     }
