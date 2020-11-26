@@ -11,7 +11,7 @@ const Header = ({user}) => {
 
     return (
         <>
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="dark" variant="dark" className="fixed-top">
                 <Navbar.Brand as={Link} to="/">
                     {t('common.header.title')}
                 </Navbar.Brand>
@@ -33,6 +33,9 @@ const Header = ({user}) => {
                     }
                 </Nav>
             </Navbar>
+            <div style={{
+                height: 70
+            }}/>
         </>
     );
 };
