@@ -14,8 +14,9 @@ class StatusView extends Component {
         return (
             <Layout>
                 <div className="container">
+                    <h2>샤드 정보</h2>
                     {clusters ? clusters.length ? (
-                            <table striped bordered hover>
+                            <table className="table table-bordered table-hover table-striped">
                                 <thead>
                                 <tr>
                                     <th>
@@ -33,7 +34,7 @@ class StatusView extends Component {
                                 {
                                     clusters.map((cluster, i) => (
                                         <tr key={i}>
-                                            <td>#{i}</td>
+                                            <td>{i}</td>
                                             <td>{cluster.guilds}</td>
                                             <td>{cluster.users}</td>
                                         </tr>
