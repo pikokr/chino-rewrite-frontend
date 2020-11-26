@@ -8,7 +8,6 @@ export default class Socket {
 
 Socket.socket.on('connect', () => {
     console.log('Connected to backend socket.')
-    Socket.socket.emit('clusters')
 })
 
 Socket.socket.on('clusters', data => {
