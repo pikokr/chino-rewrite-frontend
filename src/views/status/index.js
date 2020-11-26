@@ -43,7 +43,7 @@ class StatusView extends Component {
                                 </tbody>
                             </table>
                         ) : '연결되어있는 클러스터가 없어요!' :
-                        'Loading'}
+                        <div className="spinner-border"/>}
                 </div>
             </Layout>
         );

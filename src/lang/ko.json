@@ -3,7 +3,8 @@
         "header": {
             "title": "치노봇",
             "links": {
-                "commands": "명령어"
+                "commands": "명령어",
+                "status": "상태"
             },
             "login": "로그인"
         }

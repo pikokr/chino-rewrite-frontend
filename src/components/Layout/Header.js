@@ -26,6 +26,12 @@ const Header = ({user}) => {
                                     {t('common.header.links.commands')}
                                 </Link>
                             </li>
+                            <li className="nav-item">
+                                <Link to="/status" className="nav-link">
+                                    <FontAwesomeIcon icon={['fas', 'check']} style={{marginRight: 10}}/>
+                                    {t('common.header.links.status')}
+                                </Link>
+                            </li>
                         </ul>
                         <ul className="navbar-nav ml-auto">
                             {
