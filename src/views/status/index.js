@@ -33,7 +33,7 @@ class StatusView extends Component {
                                 <tbody>
                                 {
                                     clusters.map((cluster, i) => (
-                                        <tr>
+                                        <tr key={i}>
                                             <td>#{i}</td>
                                             <td>{cluster.guilds}</td>
                                             <td>{cluster.users}</td>
