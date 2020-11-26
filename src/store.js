@@ -2,14 +2,16 @@ import { connect } from "react-redux"
 import { createStore } from "redux"
 
 const initialState = {
-    user: localStorage.getItem('token') ? null : false
+    user: localStorage.getItem('token') ? null : false,
+    clusters: null
 }
 
 function State(state = initialState, action) {
-    console.log(action)
     switch (action.type) {
         case '@@CHINO/LOGIN':
             return {...state, user: action.payload}
+        case '@@CHINO/CLUSTERS':
+            return {...state, clusters: action.payload}
         default:
             return state
     }
@@ -19,5 +21,6 @@ export default createStore(State)
 
 
 export const withState = connect(state => ({
-    user: state.user
+    user: state.user,
+    clusters: state.clusters
 }), dispatch => ({}))

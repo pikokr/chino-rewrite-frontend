@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import Layout from '../../components/Layout';
+import {withState} from "../../store";
 
 class Home extends Component {
     render() {
         return (
             <Layout>
-                홈
+                {JSON.stringify(this.props.clusters)}
             </Layout>
         );
     }
 }
 
-export default Home;
+export default withState(Home);

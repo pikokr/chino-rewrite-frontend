@@ -8,6 +8,7 @@ import './i18n'
 import './icon'
 import store from './store'
 import { Provider } from 'react-redux';
+import './Socket'
 
 ReactDOM.render(
   <Provider store={store}>
