@@ -9,6 +9,17 @@
             "login": "로그인"
         }
     },
+    "views": {
+        "status": {
+            "shards": {
+                "title": "샤드 정보",
+                "cols": {
+                    "guilds": "서버 수",
+                    "users": "유저 수"
+                }
+            }
+        }
+    },
     "commands": {
         "help": {
             "name": "도움말",

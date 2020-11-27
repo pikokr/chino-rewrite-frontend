@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {withState} from "../../store";
 import Socket from "../../Socket";
 import Layout from "../../components/Layout";
+import {withTranslation} from "react-i18next";
 
 class StatusView extends Component {
     componentDidMount() {
@@ -9,12 +10,14 @@ class StatusView extends Component {
     }
 
     render() {
-        const {clusters} = this.props
+        const {clusters, t} = this.props
 
         return (
             <Layout>
                 <div className="container">
-                    <h2>샤드 정보</h2>
+                    <h2>{
+                        t('views.status.shards.title')
+                    }</h2>
                     {clusters ? clusters.length ? (
                             <table className="table table-bordered table-hover table-striped">
                                 <thead>
@@ -23,10 +26,14 @@ class StatusView extends Component {
                                         #
                                     </th>
                                     <th>
-                                        서버 수
+                                        {
+                                            t('views.status.shards.cols.guilds')
+                                        }
                                     </th>
                                     <th>
-                                        유저 수
+                                        {
+                                            t('views.status.shards.cols.users')
+                                        }
                                     </th>
                                 </tr>
                                 </thead>
@@ -50,4 +57,4 @@ class StatusView extends Component {
     }
 }
 
-export default withState(StatusView);
+export default withTranslation()(withState(StatusView));
