@@ -18,7 +18,12 @@ class CommandsView extends Component {
                     {commands ? commands.length ? (() => {
                         const categories = commands.map((category, i) => (
                             [
-                                <a key={i} className={`nav-link ${i === 0 ? 'active' : ''}`} data-toggle="pill" href={`#categories__tab__btn${i}`}>{category.name}</a>
+                                <a key={i} className={`nav-link ${i === 0 ? 'active' : ''}`} data-toggle="pill" href={`#categories__tab__btn${i}`}>{category.name}</a>,
+                                <div key={i} className={`tab-pane fade ${i===0?'show active' : ''}`} id={`categories__tab__btn${i}`}>
+                                    {category.commands.map((r, i)=><div key={i}>
+                                        {r}
+                                    </div>)}
+                                </div>
                             ]
                         ))
                         return <div className="d-flex align-items-start">
