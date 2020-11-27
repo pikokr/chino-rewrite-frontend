@@ -12,6 +12,8 @@ function State(state = initialState, action) {
             return {...state, user: action.payload}
         case '@@CHINO/CLUSTERS':
             return {...state, clusters: action.payload}
+        case '@@CHINO/COMMANDS':
+            return {...state, commands: action.payload}
         default:
             return state
     }
@@ -22,5 +24,6 @@ export default createStore(State)
 
 export const withState = connect(state => ({
     user: state.user,
-    clusters: state.clusters
+    clusters: state.clusters,
+    commands: state.commands
 }), dispatch => ({}))

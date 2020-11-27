@@ -16,3 +16,11 @@ Socket.socket.on('clusters', data => {
         payload: data
     })
 })
+
+
+Socket.socket.on('commands', data => {
+    store.dispatch({
+        type: '@@CHINO/COMMANDS',
+        payload: data
+    })
+})
