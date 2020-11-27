@@ -11,15 +11,25 @@ class CommandsView extends Component {
     render() {
         const {commands} = this.props
 
-        console.log(commands)
-
         return (
             <Layout>
                 <div className="container">
-                    <h2>샤드 정보</h2>
-                    {commands ? commands.length ? (
-                            <div>commands</div>
-                        ) : '명령어가 없네요!' :
+                    <h2>명령어</h2>
+                    {commands ? commands.length ? (() => {
+                        const categories = commands.map((category, i) => (
+                            [
+                                <a key={i} className={`nav-link ${i === 0 ? 'active' : ''}`} data-toggle="pill" href={`#categories__tab__btn${i}`}>{category.name}</a>
+                            ]
+                        ))
+                        return <div className="d-flex align-items-start">
+                            <div className="nav flex-column nav-pills mr-3" id="commands-tab" role="tablist">
+                                {categories.map(r=>r[0])}
+                            </div>
+                            <div className="tab-content" id="commands-tab-content">
+                                {categories.map(r=>r[1])}
+                            </div>
+                        </div>
+                    })() : '명령어가 없네요!' :
                         <div className="spinner-border"/>}
                 </div>
             </Layout>
