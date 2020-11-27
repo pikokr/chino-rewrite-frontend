@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {withState} from "../../store";
 import Socket from "../../Socket";
 import Layout from "../../components/Layout";
+import {withTranslation} from "react-i18next";
+import classes from './commands.module.css'
 
 class CommandsView extends Component {
     componentDidMount() {
@@ -9,7 +11,9 @@ class CommandsView extends Component {
     }
 
     render() {
-        const {commands} = this.props
+        const {commands, t} = this.props
+
+        console.log(classes)
 
         return (
             <Layout>
@@ -18,19 +22,21 @@ class CommandsView extends Component {
                     {commands ? commands.length ? (() => {
                         const categories = commands.map((category, i) => (
                             [
-                                <a key={i} className={`nav-link ${i === 0 ? 'active' : ''}`} data-toggle="pill" href={`#categories__tab__btn${i}`}>{category.name}</a>,
+                                <a key={i} className={`nav-link ${classes.tab} ${i === 0 ? 'active' : ''}`} data-toggle="pill" href={`#categories__tab__btn${i}`}>{
+                                    t(`categories.${category.name}`)
+                                }</a>,
                                 <div key={i} className={`tab-pane fade ${i===0?'show active' : ''}`} id={`categories__tab__btn${i}`}>
                                     {category.commands.map((r, i)=><div key={i}>
-                                        {r}
+                                        {t(`commands.${r}.name`)}
                                     </div>)}
                                 </div>
                             ]
                         ))
-                        return <div className="d-flex align-items-start">
-                            <div className="nav flex-column nav-pills mr-3" id="commands-tab" role="tablist">
+                        return <div className="d-flex align-items-start flex-column flex-md-row">
+                            <div className={`nav flex-column nav-pills mr-3 ${classes.tab}`} id="commands-tab" role="tablist">
                                 {categories.map(r=>r[0])}
                             </div>
-                            <div className="tab-content" id="commands-tab-content">
+                            <div className="tab-content" id="commands-tab-content" style={{width: '100%'}}>
                                 {categories.map(r=>r[1])}
                             </div>
                         </div>
@@ -42,4 +48,4 @@ class CommandsView extends Component {
     }
 }
 
-export default withState(CommandsView);
+export default withTranslation()(withState(CommandsView));

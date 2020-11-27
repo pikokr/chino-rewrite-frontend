@@ -1,0 +1,9 @@
+.tab {
+    width: unset;
+}
+
+@media all and (max-width: 767px) {
+    .tab {
+        width: 100%;
+    }
+}
