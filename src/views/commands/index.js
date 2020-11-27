@@ -13,8 +13,6 @@ class CommandsView extends Component {
     render() {
         const {commands, t} = this.props
 
-        console.log(classes)
-
         return (
             <Layout>
                 <div className="container">
