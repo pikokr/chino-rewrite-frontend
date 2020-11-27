@@ -39,7 +39,7 @@ const Header = ({user}) => {
                                     <li className="nav-item">
                                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                         <a className="nav-link" href="#" onClick={() => {
-                                            window.open(`${Util.config.api}/urls/login`, 'Login', 'width=500;height=500')
+                                            window.open(`${Util.config.api}/urls/login`, 'Login', 'width=400,height=700')
                                         }}>
                                             <FontAwesomeIcon style={{marginRight: 10}} icon={['fas', 'lock']}/>
                                             {t('common.header.login')}
