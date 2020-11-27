@@ -45,30 +45,13 @@ const Header = ({user}) => {
                                             {t('common.header.login')}
                                         </a>
                                     </li>
-                                    : ''
+                                    : user === null ? (
+                                        <div className="spinner-border text-white"/>
+                                    ) : ''
+
                             }
                         </ul>
                     </div>
-                    {/*
-                <Navbar.Collapse>
-                    <Nav className="mr-auto">
-                        <Nav.Link as={Link} to="/commands">
-                            {t('common.header.links.commands')}</Nav.Link>
-                    </Nav>
-                    <Nav className="ml-auto">
-                        {
-                            user === false ?
-                                <Nav.Link onClick={() => {
-                                    window.open(`${Util.config.api}/urls/login`, 'Login', 'width=500;height=500')
-                                }}>
-                                    <FontAwesomeIcon icon={['fas', 'lock']}/>
-                                    {t('common.header.login')}
-                                </Nav.Link>
-                                : ''
-                        }
-                    </Nav>
-                </Navbar.Collapse>
-                */}
                 </div>
             </nav>
             <div style={{
