@@ -47,8 +47,16 @@ const Header = ({user}) => {
                                     </li>
                                     : user === null ? (
                                         <div className="spinner-border text-white"/>
-                                    ) : ''
-
+                                    ) : (
+                                        <ul className="dropdown nav-item">
+                                            <div className="nav-link dropdown-toggle" data-toggle="dropdown">
+                                                {user.meta.username}#{user.meta.discriminator}
+                                            </div>
+                                            <div className="dropdown-menu dropdown-menu-right">
+                                                <div className="dropdown-item">예이</div>
+                                            </div>
+                                        </ul>
+                                    )
                             }
                         </ul>
                     </div>
