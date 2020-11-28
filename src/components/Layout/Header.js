@@ -56,7 +56,9 @@ const Header = ({user}) => {
                                         <div className="spinner-border text-white"/>
                                     ) : (
                                         <ul className="dropdown nav-item">
-                                            <div className="nav-link dropdown-toggle" data-toggle="dropdown">
+                                            <div className="nav-link dropdown-toggle" data-toggle="dropdown" style={{
+                                                cursor: 'pointer'
+                                            }}>
                                                 {user.meta.username}#{user.meta.discriminator}
                                             </div>
                                             <DropdownMenuDiv className="dropdown-menu dropdown-menu-right">
