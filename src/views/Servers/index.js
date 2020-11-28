@@ -3,6 +3,7 @@ import {withTranslation} from "react-i18next";
 import store, {withState} from "../../store";
 import Layout from "../../components/Layout";
 import Socket from "../../Socket";
+import {Link} from "react-router-dom";
 
 class Guilds extends Component {
     componentDidMount() {
@@ -14,15 +15,34 @@ class Guilds extends Component {
     }
 
     render() {
-        const {guilds, user} = this.props
-        console.log(guilds)
+        const {guilds, t, user} = this.props
         return (
             <Layout>
                 <div className="container">
-                    {user ? guilds === null ? <div className="spinner-border" style={{
+                    {user !== false ? guilds === null ? <div className="spinner-border" style={{
                         width: 50,
                         height: 50
-                    }}/> : guilds === false ? <div>서버 목록을 가져올 수 없어요!</div> : '' : '로그인해주세요!'}
+                    }}/> : guilds === false ? <div>서버 목록을 가져올 수 없어요!</div> : <div className="row g-2">
+                        {
+                            guilds.map(guild => (
+                                <div key={guild.id} className="card">
+                                    <div className="card-body" style={{
+                                        display: 'flex',
+                                        alignItems: 'center'
+                                    }}>
+                                        <span style={{flexGrow: 1}}>
+                                            {guild.name}
+                                        </span>
+                                        {
+                                            guild.bot ? <Link to={`/servers/${guild.id}`} className="btn btn-primary">
+                                                {t('views.servers.manage')}
+                                            </Link> : <div/>
+                                        }
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div> : '로그인해주세요!'}
                 </div>
             </Layout>
         );

@@ -20,6 +20,10 @@
                     "users": "유저 수"
                 }
             }
+        },
+        "servers": {
+            "invite": "초대",
+            "manage": "관리"
         }
     },
     "commands": {
