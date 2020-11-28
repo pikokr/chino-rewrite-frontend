@@ -3,7 +3,9 @@ import { createStore } from "redux"
 
 const initialState = {
     user: localStorage.getItem('token') ? null : false,
-    clusters: null
+    clusters: null,
+    commands: null,
+    guilds: null
 }
 
 function State(state = initialState, action) {
@@ -14,6 +16,8 @@ function State(state = initialState, action) {
             return {...state, clusters: action.payload}
         case '@@CHINO/COMMANDS':
             return {...state, commands: action.payload}
+        case '@@CHINO/GUILDS':
+            return {...state, guilds: action.payload}
         default:
             return state
     }
@@ -22,8 +26,4 @@ function State(state = initialState, action) {
 export default createStore(State)
 
 
-export const withState = connect(state => ({
-    user: state.user,
-    clusters: state.clusters,
-    commands: state.commands
-}), dispatch => ({}))
+export const withState = connect(state => state, dispatch => ({}))
