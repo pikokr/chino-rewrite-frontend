@@ -6,7 +6,9 @@
                 "commands": "명령어",
                 "status": "상태"
             },
-            "login": "로그인"
+            "login": "로그인",
+            "guilds": "서버 관리",
+            "logout": "로그아웃"
         }
     },
     "views": {

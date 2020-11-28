@@ -62,10 +62,15 @@ const Header = ({user}) => {
                                                 {user.meta.username}#{user.meta.discriminator}
                                             </div>
                                             <DropdownMenuDiv className="dropdown-menu dropdown-menu-right">
+                                                <Link className="dropdown-item" to="/servers">
+                                                    {t('common.header.guilds')}
+                                                </Link>
                                                 <div className="dropdown-item" onClick={() => {
                                                     localStorage.removeItem('token')
                                                     window.location.reload()
-                                                }}>로그아웃</div>
+                                                }}>
+                                                    {t('common.header.logout')}
+                                                </div>
                                             </DropdownMenuDiv>
                                         </ul>
                                     )
