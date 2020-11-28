@@ -15,6 +15,10 @@ class Guilds extends Component {
         Socket.socket.emit('guilds', {admin:true})
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        Socket.socket.emit('guilds', {admin:true})
+    }
+
     render() {
         const {guilds, t, user} = this.props
         return (

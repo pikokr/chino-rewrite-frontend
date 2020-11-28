@@ -2,7 +2,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
-import {withState} from '../../store';
+import store, {withState} from '../../store';
 import Util from '../../Util';
 import styled from "styled-components";
 import Socket from "../../Socket";
@@ -68,7 +68,10 @@ const Header = ({user}) => {
                                                 </Link>
                                                 <div className="dropdown-item" onClick={() => {
                                                     localStorage.removeItem('token')
-                                                    window.location.reload()
+                                                    store.dispatch({
+                                                        type: '@@CHINO/LOGIN',
+                                                        payload: false
+                                                    })
                                                 }}>
                                                     {t('common.header.logout')}
                                                 </div>
