@@ -15,10 +15,6 @@ class Guilds extends Component {
         Socket.socket.emit('guilds', {admin:true})
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        Socket.socket.emit('guilds', {admin:true})
-    }
-
     render() {
         const {guilds, t, user} = this.props
         return (
@@ -41,7 +37,7 @@ class Guilds extends Component {
                                         {
                                             guild.bot ? <Link to={`/servers/${guild.id}`} className="btn btn-primary">
                                                 {t('views.servers.manage')}
-                                            </Link> : <a className="btn btn-secondary" href={Util.config.api + '/invite/' + guild.id}>{t('views.servers.invite')}</a>
+                                            </Link> : <button className="btn btn-secondary" onClick={() => window.open(Util.config.api + '/invite/' + guild.id + '?opener=' + Socket.socket.id, 'invite', 'width=500,height=700')}>{t('views.servers.invite')} </button>
                                         }
                                     </div>
                                 </div>
