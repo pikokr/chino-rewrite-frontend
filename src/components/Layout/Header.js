@@ -4,6 +4,13 @@ import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
 import {withState} from '../../store';
 import Util from '../../Util';
+import styled from "styled-components";
+
+const DropdownMenuDiv = styled.div`
+div {
+    cursor: pointer;
+}
+`
 
 const Header = ({user}) => {
     const {t} = useTranslation()
@@ -52,9 +59,12 @@ const Header = ({user}) => {
                                             <div className="nav-link dropdown-toggle" data-toggle="dropdown">
                                                 {user.meta.username}#{user.meta.discriminator}
                                             </div>
-                                            <div className="dropdown-menu dropdown-menu-right">
-                                                <div className="dropdown-item">예이</div>
-                                            </div>
+                                            <DropdownMenuDiv className="dropdown-menu dropdown-menu-right">
+                                                <div className="dropdown-item" onClick={() => {
+                                                    localStorage.removeItem('token')
+                                                    window.location.reload()
+                                                }}>로그아웃</div>
+                                            </DropdownMenuDiv>
                                         </ul>
                                     )
                             }
