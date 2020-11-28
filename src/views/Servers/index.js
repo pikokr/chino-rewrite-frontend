@@ -4,6 +4,7 @@ import store, {withState} from "../../store";
 import Layout from "../../components/Layout";
 import Socket from "../../Socket";
 import {Link} from "react-router-dom";
+import Util from "../../Util";
 
 class Guilds extends Component {
     componentDidMount() {
@@ -11,7 +12,7 @@ class Guilds extends Component {
             type: '@@CHINO/GUILDS',
             payload: null
         })
-        Socket.socket.emit('guilds')
+        Socket.socket.emit('guilds', {admin:true})
     }
 
     render() {
@@ -36,7 +37,7 @@ class Guilds extends Component {
                                         {
                                             guild.bot ? <Link to={`/servers/${guild.id}`} className="btn btn-primary">
                                                 {t('views.servers.manage')}
-                                            </Link> : <div/>
+                                            </Link> : <a className="btn btn-secondary" href={Util.config.api + '/invite/' + guild.id}>{t('views.servers.invite')}</a>
                                         }
                                     </div>
                                 </div>
