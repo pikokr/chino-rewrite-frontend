@@ -35,3 +35,10 @@ Socket.socket.on('commands', data => {
         payload: data
     })
 })
+
+Socket.socket.on('guilds', data => {
+    store.dispatch({
+        type: '@@CHINO/GUILDS',
+        payload: data
+    })
+})

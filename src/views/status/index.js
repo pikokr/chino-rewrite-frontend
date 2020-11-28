@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
-import {withState} from "../../store";
+import store, {withState} from "../../store";
 import Socket from "../../Socket";
 import Layout from "../../components/Layout";
 import {withTranslation} from "react-i18next";
 
 class StatusView extends Component {
     componentDidMount() {
+        store.dispatch({
+            type: '@@CHINO/CLUSTERS',
+            payload: null
+        })
         Socket.socket.emit('clusters')
     }
 
