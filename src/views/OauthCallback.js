@@ -6,17 +6,15 @@ class OauthCallback extends Component {
         const params = new URLSearchParams(window.location.search)
         const token = params.get('token')
         if (!token) {
-            if (window.opener) window.opener.location.reload()
             window.close()
         }
         Socket.socket.once('verify', data => {
             if (data === true) {
                 window.localStorage.setItem('token', token)
             }
-            if (window.opener) window.opener.location.reload()
             window.close()
         })
-        Socket.socket.emit('verify', token)
+        Socket.socket.emit('verify', {token, opener: params.get('state')})
     }
 
     render() {
