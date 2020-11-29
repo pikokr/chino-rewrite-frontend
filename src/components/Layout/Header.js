@@ -17,7 +17,7 @@ const Header = ({user, offset=70}) => {
     const {t} = useTranslation()
 
     return (
-        <>
+        <div>
             <nav className="navbar navbar-dark navbar-expand-lg fixed-top bg-dark">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/">
@@ -86,7 +86,7 @@ const Header = ({user, offset=70}) => {
             <div style={{
                 height: offset
             }}/>
-        </>
+        </div>
     );
 };
 

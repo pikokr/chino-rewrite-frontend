@@ -30,8 +30,13 @@ class GuildLayout extends Component {
     render() {
         return (
             <Layout offset={55}>
+                <nav className="d-block d-md-none navbar navbar-dark bg-dark">
+                    <div className="container-fluid">
+                        <button className="navbar-toggler" data-toggle="collapse" data-target="#dash-sidebar-collapse"><span className="navbar-toggler-icon"/></button>
+                    </div>
+                </nav>
                 <div className={styles.layout}>
-                    <aside className={`${styles.sidebar} bg-dark collapse`} style={{
+                    <aside className={`${styles.sidebar} bg-dark collapse`} id="dash-sidebar-collapse" style={{
                         height: '100%'
                     }}>
                         <div style={{
