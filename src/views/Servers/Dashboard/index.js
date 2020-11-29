@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
 import GuildLayout from "../../../components/GuildLayout";
+import {Line} from 'react-chartjs-2'
+
+function rand() {
+    return Math.floor(Math.random() * 100)
+}
 
 class DashboardView extends Component {
     render() {
@@ -62,6 +67,25 @@ class DashboardView extends Component {
                     <div className="card">
                         <div className="card-body">
                             <div className="h4">멤버 수 통계</div>
+                            <Line data={{
+                                labels: ['2020-11-29', '2020-11-30', '2020-12-01', '2020-12-02', '2020-12-03', '2020-12-04', '2020-12-05', '2020-12-06', '2020-12-07', '2020-12-08'],
+                                datasets: [{
+                                    label: '멤버 수',
+                                    fill: false,
+                                    data: [
+                                        rand(),
+                                        rand(),
+                                        rand(),
+                                        rand(),
+                                        rand(),
+                                        rand(),
+                                        rand(),
+                                        rand(),
+                                        rand(),
+                                        rand()
+                                    ],
+                                }]
+                            }} options={{}}/>
                         </div>
                     </div>
                 </div>
