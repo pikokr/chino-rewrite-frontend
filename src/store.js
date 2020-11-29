@@ -5,7 +5,8 @@ const initialState = {
     user: localStorage.getItem('token') ? null : false,
     clusters: null,
     commands: null,
-    guilds: null
+    guilds: null,
+    guild: {}
 }
 
 function State(state = initialState, action) {
@@ -18,6 +19,8 @@ function State(state = initialState, action) {
             return {...state, commands: action.payload}
         case '@@CHINO/GUILDS':
             return {...state, guilds: action.payload}
+        case '@@CHINO/GUILD':
+            return {...state, guild: {...state.guild, [action.payload.id]: action.payload}}
         default:
             return state
     }

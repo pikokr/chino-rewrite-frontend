@@ -1,0 +1,18 @@
+@media (min-width: 1024px) {
+    .card-columns {
+        column-count: 2;
+        column-gap: 1.25rem;
+        orphans: 1;
+        widows: 1;
+    }
+
+    .card-columns .card {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.card-columns .card {
+    margin-bottom: 1.25rem;
+}
+

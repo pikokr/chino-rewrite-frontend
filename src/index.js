@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Root from './Root'
+import './style.css'
 import './i18n'
 import './icon'
 import store from './store'
