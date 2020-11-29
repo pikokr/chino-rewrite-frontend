@@ -13,7 +13,7 @@ div {
 }
 `
 
-const Header = ({user}) => {
+const Header = ({user, offset=70}) => {
     const {t} = useTranslation()
 
     return (
@@ -84,7 +84,7 @@ const Header = ({user}) => {
                 </div>
             </nav>
             <div style={{
-                height: 70
+                height: offset
             }}/>
         </>
     );

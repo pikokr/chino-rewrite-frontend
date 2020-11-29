@@ -6,6 +6,7 @@ import CommandsView from "./views/commands";
 import OauthCallback from "./views/OauthCallback";
 import Guilds from "./views/Servers";
 import InviteCallback from "./views/InviteCallback";
+import DashboardView from "./views/Servers/Dashboard";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route exact path="/callback" component={OauthCallback}/>
       <Route exact path="/invite/callback" component={InviteCallback}/>
       <Route exact path="/servers" component={Guilds}/>
+      <Route exact path="/servers/:id" component={DashboardView}/>
     </Switch>
   );
 }
