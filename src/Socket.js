@@ -42,3 +42,10 @@ Socket.socket.on('guilds', data => {
         payload: data
     })
 })
+
+Socket.socket.on('guild', data => {
+    store.dispatch({
+        type: '@@CHINO/GUILD',
+        payload: data
+    })
+})
