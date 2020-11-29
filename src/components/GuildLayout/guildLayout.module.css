@@ -15,6 +15,7 @@
 
 .sidebar {
     grid-area: sidebar;
+    color: #fff;
 }
 
 .main {
