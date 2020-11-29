@@ -3,7 +3,7 @@
         display: grid;
         gap: 1.5rem;
         grid-template-areas: "sidebar main";
-        grid-template-columns: 1fr 3fr;
+        grid-template-columns: 250px calc(100% - 275px);
     }
 }
 
@@ -13,4 +13,9 @@
 
 .sidebar {
     grid-area: sidebar;
+}
+
+.main {
+    grid-area: main;
+    padding-top: 20px;
 }

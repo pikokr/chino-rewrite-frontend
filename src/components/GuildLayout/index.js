@@ -7,13 +7,13 @@ class GuildLayout extends Component {
         return (
             <Layout offset={50}>
                 <div className={styles.layout}>
-                    <aside className={styles.sidebar} style={{
-                        background: '#000',
+                    <aside className={`${styles.sidebar} bg-dark`} style={{
                         height: '100%'
                     }}>
                         사이드바
                     </aside>
-                    <div>
+                    <div className={styles.main}>
+                        <h1>TITLE</h1>
                         {this.props.children}
                     </div>
                 </div>

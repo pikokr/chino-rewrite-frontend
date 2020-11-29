@@ -5,6 +5,7 @@ class DashboardView extends Component {
     render() {
         return (
             <GuildLayout>
+                대시보드
             </GuildLayout>
         );
     }
