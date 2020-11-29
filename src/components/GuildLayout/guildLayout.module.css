@@ -22,3 +22,7 @@
     grid-area: main;
     padding-top: 15px;
 }
+
+.sidebarContainer .nav-link {
+    color: #fff;
+}
