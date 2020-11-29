@@ -4,7 +4,7 @@ import GuildLayout from "../../../components/GuildLayout";
 class DashboardView extends Component {
     render() {
         return (
-            <GuildLayout>
+            <GuildLayout title="대시보드">
                 대시보드
             </GuildLayout>
         );

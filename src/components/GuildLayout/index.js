@@ -25,7 +25,7 @@ class GuildLayout extends Component {
                         </ul>
                     </aside>
                     <div className={`${styles.main} container`}>
-                        <h1>TITLE</h1>
+                        <h1>{this.props.title}</h1>
                         {this.props.children}
                     </div>
                 </div>
