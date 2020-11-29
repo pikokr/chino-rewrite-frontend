@@ -85,7 +85,7 @@ class DashboardView extends Component {
                                         rand()
                                     ],
                                 }]
-                            }} options={{}}/>
+                            }}/>
                         </div>
                     </div>
                 </div>
