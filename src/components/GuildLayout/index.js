@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import {withRouter} from "react-router-dom";
 import Socket from "../../Socket";
 import store, {withState} from "../../store";
+import {withTranslation} from "react-i18next";
 
 const Item = withRouter(({children, path, location}) => {
     const active = (location.pathname.split('/').slice(3).join('/') || '/') === path
@@ -30,10 +31,17 @@ class GuildLayout extends Component {
         return (
             <Layout offset={55}>
                 {
-                    this.props.guild[this.id]?.name ? <div className={styles.layout}>
+                    this.props.user ? this.props.guild[this.id]?.error ? this.props.t('errors.guild_layout.' + this.props.guild[this.id].error) : this.props.guild[this.id]?.name ? <div className={styles.layout}>
                         <aside className={`${styles.sidebar} bg-dark collapse`} style={{
                             height: '100%'
                         }}>
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }} className="p-3">
+                                <h5>{this.props.guild[this.id].name}</h5>
+                            </div>
                             <ul className="flex-column nav list-unstyled">
                                 <Item path="/">메인</Item>
                             </ul>
@@ -45,11 +53,11 @@ class GuildLayout extends Component {
                     </div> : <div className="spinner-border m-3" style={{
                         width: 50,
                         height: 50
-                    }}/>
+                    }}/> : '로그인 해주세요'
                 }
             </Layout>
         );
     }
 }
 
-export default withState(withRouter(GuildLayout));
+export default withTranslation()(withState(withRouter(GuildLayout)));
