@@ -51,18 +51,6 @@ class DashboardView extends Dash {
                                         <td>2020-11-29</td>
                                         <td>채널 "ㅁㄴㅇㄹ" 생성</td>
                                     </tr>
-                                    <tr>
-                                        <td>2020-11-29</td>
-                                        <td>역할 "ㅁㄴㅇㄹ" 생성</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2020-11-29</td>
-                                        <td>채널 "ㅁㄴㅇㄹ" 제거</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2020-11-29</td>
-                                        <td>역할 "ㅁㄴㅇㄹ" 제거</td>
-                                    </tr>
                                     </tbody>
                                 </table>
                             </div>

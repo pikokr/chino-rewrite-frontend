@@ -4,7 +4,7 @@ import GuildLayout from "../../../../components/GuildLayout";
 class MusicSettings extends Component {
     render() {
         return (
-            <GuildLayout>
+            <GuildLayout title="음악 기능 설정">
             </GuildLayout>
         );
     }
