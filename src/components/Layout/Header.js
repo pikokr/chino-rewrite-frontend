@@ -63,6 +63,9 @@ const Header = ({user, offset=70}) => {
                                                 {user.meta.username}#{user.meta.discriminator}
                                             </div>
                                             <DropdownMenuDiv className="dropdown-menu dropdown-menu-right">
+                                                <Link className="dropdown-item" to="/premium">
+                                                    {t('common.header.premium')}
+                                                </Link>
                                                 <Link className="dropdown-item" to="/servers">
                                                     {t('common.header.guilds')}
                                                 </Link>

@@ -15,10 +15,23 @@ Socket.socket.on('connect', () => {
 })
 
 Socket.socket.on('login', data => {
-    store.dispatch({
-        type: '@@CHINO/LOGIN',
-        payload: data
-    })
+    if (data === 'register') {
+        if (window.confirm('치노봇 서비스에 가입되어 있지 않네요! 가입할까요? 취소하면 로그아웃 됩니다!')) {
+            store.dispatch({
+                type: '@@CHINO/LOGIN',
+                payload: null
+            })
+            Socket.socket.emit('register')
+        } else {
+            localStorage.removeItem('token')
+            window.location.reload()
+        }
+    } else {
+        store.dispatch({
+            type: '@@CHINO/LOGIN',
+            payload: data
+        })
+    }
 })
 
 Socket.socket.on('clusters', data => {

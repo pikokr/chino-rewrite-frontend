@@ -8,7 +8,8 @@
             },
             "login": "로그인",
             "guilds": "서버 관리",
-            "logout": "로그아웃"
+            "logout": "로그아웃",
+            "premium": "치노봇 프리미엄"
         }
     },
     "views": {
