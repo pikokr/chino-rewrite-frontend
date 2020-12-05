@@ -1,3 +1,6 @@
 {
-    "api": "http://test.pikodev.me:1234"
+    "api": "http://test.pikodev.me:1234",
+    "payment": {
+        "id": "imp14624720"
+    }
 }

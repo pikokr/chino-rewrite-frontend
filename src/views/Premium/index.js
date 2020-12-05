@@ -47,7 +47,27 @@ class Premium extends Component {
                             </div>
                         </div>
                     </div>
-                    <button className="btn btn-primary mt-3">치노봇 프리미엄 1개월 구독하기</button>
+                    <button className="btn btn-primary mt-3" data-toggle="modal"
+                            data-target="#premium-payment-modal">치노봇 프리미엄 1개월 구독하기
+                    </button>
+                    <div aria-hidden="true" className="modal fade" id="premium-payment-modal">
+                        <div className="modal-dialog">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title">
+                                        프리미엄 결제하기
+                                    </h5>
+                                    <button type="button" className="btn-close" data-dismiss="modal" aria-label="Close"/>
+                                </div>
+                                <div className="modal-body">
+                                    BODY
+                                </div>
+                                <div className="modal-footer">
+                                    FOOTER
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </Layout>
         );
