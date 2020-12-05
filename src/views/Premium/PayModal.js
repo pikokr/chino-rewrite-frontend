@@ -22,17 +22,7 @@ class PayModal extends Component {
                         <div className="modal-body">
                             <h5>결제수단 선택</h5>
                             {
-                                [{name: '문화상품권', code: 'cultureland'},
-                                    {
-                                        name: '카드',
-                                        code: 'card'
-                                    }, {
-                                    name: '가상계좌',
-                                    code: 'vbank'
-                                }, {
-                                    name: '실시간 계좌이체',
-                                    code: 'trans'
-                                }].map((item, idx) => (
+                                [{name: '문화상품권', code: 'cultureland'}].map((item, idx) => (
                                     <div className="form-check" key={idx}>
                                         <input onChange={event => {
                                             this.setState({

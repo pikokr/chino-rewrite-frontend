@@ -6,7 +6,7 @@ import PayModal from "./PayModal";
 
 class Premium extends Component {
     render() {
-        const {user} = this.props
+        //const {user} = this.props
 
         return (
             <Layout>
@@ -51,9 +51,10 @@ class Premium extends Component {
                             </div>
                         </div>
                     </div>
-                    <button disabled={!user} className="btn btn-primary mt-3" data-toggle="modal"
-                            data-target="#premium-payment-modal">치노봇 프리미엄 1개월 구독하기
+                    <button disabled={/*!user*/ true} className="btn btn-primary mt-3" data-toggle="modal"
+                            data-target="#premium-payment-modal">치노봇 프리미엄 +30일 결제
                     </button>
+                    <small>파랑이가 사업자등록을 안해서 현재 사용 불가능합니다.</small>
                     <PayModal/>
                 </div>
             </Layout>
