@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import Layout from "../../components/Layout";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {withState} from "../../store";
 
 class Premium extends Component {
     render() {
+        const {user} = this.props
+
         return (
             <Layout>
                 <div className="container">
@@ -47,7 +50,7 @@ class Premium extends Component {
                             </div>
                         </div>
                     </div>
-                    <button className="btn btn-primary mt-3" data-toggle="modal"
+                    <button disabled={!user} className="btn btn-primary mt-3" data-toggle="modal"
                             data-target="#premium-payment-modal">치노봇 프리미엄 1개월 구독하기
                     </button>
                     <div aria-hidden="true" className="modal fade" id="premium-payment-modal">
@@ -63,9 +66,20 @@ class Premium extends Component {
                                 <div className="modal-body">
                                     <h5>결제수단 선택</h5>
                                     {
-                                        [{name: '문화상품권', code: 'cultureland'}].map((item,idx) => (
+                                        [{name: '문화상품권', code: 'cultureland'},
+                                            {
+                                                name: '카드',
+                                                code: 'card'
+                                            }, {
+                                            name: '가상계좌',
+                                            code: 'vbank'
+                                        }, {
+                                            name: '실시간 계좌이체',
+                                            code: 'trans'
+                                        }].map((item, idx) => (
                                             <div className="form-check" key={idx}>
-                                                <input value={item.code} className="form-check-input" type="radio" name="premium-payment-method"
+                                                <input value={item.code} className="form-check-input" type="radio"
+                                                       name="premium-payment-method"
                                                        id={`pay-${item.code}`}/>
                                                 <label className="form-check-label" htmlFor={`pay-${item.code}`}>
                                                     {item.name}
@@ -82,8 +96,8 @@ class Premium extends Component {
                     </div>
                 </div>
             </Layout>
-    );
+        );
     }
-    }
+}
 
-    export default Premium;
+export default withState(Premium);
