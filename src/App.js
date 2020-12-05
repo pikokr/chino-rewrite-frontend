@@ -8,6 +8,7 @@ import Guilds from "./views/Servers";
 import InviteCallback from "./views/InviteCallback";
 import DashboardView from "./views/Servers/Dashboard";
 import MusicSettings from "./views/Servers/Dashboard/Music";
+import Premium from "./views/Premium";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route exact path="/servers" component={Guilds}/>
       <Route exact path="/servers/:id" component={DashboardView}/>
       <Route exact path="/servers/:id/music" component={MusicSettings}/>
+      <Route exact path="/premium" component={Premium}/>
     </Switch>
   );
 }
